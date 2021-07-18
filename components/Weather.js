@@ -7,7 +7,9 @@ export default function Weather(props) {
         name: '',
         main: 'main',
         description: 'description',
-        temp: 0
+        temp: 0,
+        feelsLike: 0,
+        icon: '',
     })
     useEffect(() => {
         console.log(`fetching data with zipCode = ${props.zipCode}`)
@@ -19,7 +21,9 @@ export default function Weather(props) {
                         name: json.name,
                         main: json.weather[0].main,
                         description: json.weather[0].description,
-                        temp: json.main.temp
+                        temp: json.main.temp,
+                        feelsLike: json.main.feels_like,
+                        icon:json.weather[0].icon
                     });
                 })
                 .catch((error) => {
