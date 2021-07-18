@@ -3,19 +3,27 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function Forecast(props) {
     return (
-        <View>
+        <View style={styles.centerText}>
             <Text style={styles.textMain}>--- {props.name} ---</Text> 
-            <Text style={styles.textMain}>{props.main}</Text>
-            <Text style={styles.textDescription}>{props.description}</Text>
+            <View style={styles.view}>
+                <Text style={styles.textMain}>{props.main}</Text>
+                <Text style={styles.textDescription}>{props.description}</Text>
+            </View>
             <View style={styles.view}>
                 <Text style={styles.textTemp}>{props.temp} </Text>
-                <Text style={styles.textC}> °C</Text>
+                <Text style={styles.textC}> °C but feels like </Text>
+                <Text style={styles.textTemp}>{props.temp} </Text>
+                <Text style={styles.textC}> °C </Text>
             </View>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
+    centerText:{
+        marginTop: 30,
+        marginBottom: 30,
+    },
     textMain: {
         textAlign: 'center',
         fontWeight: 'bold',

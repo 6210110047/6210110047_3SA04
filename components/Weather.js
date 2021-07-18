@@ -45,9 +45,13 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     blackBarrier: {
-        backgroundColor: 'rgba(0,0,0,0.1)',
-        height: '40%',
-        width: '100%'
+        backgroundColor: 'rgba(255,255,255,0.4)',
+        borderRadius: 10,
+        height: "50%",
+        marginTop: "15%",
+        marginLeft: 200,
+        marginRight:200,
+        padding: 10
     },
     textZipCode: {
         paddingTop: 30,
