@@ -7,8 +7,8 @@ import { TouchableHighlight } from 'react-native-gesture-handler';
 const ZipItem = ({ place, code, navigation }) => (
     <TouchableHighlight onPress={() => navigation.navigate('Weather', { zipCode: code })}>
         <View style={styles.zipItem}>
-            <Text>{place}</Text>
-            <Text >{code}</Text>
+            <Text styles={styles.zipPlace}>{place}</Text>
+            <Text style={styles.zipCode}>{code}</Text>
         </View>
     </TouchableHighlight>
 )
@@ -62,16 +62,24 @@ export default function ZipCodeScreen() {
 }
 
 const styles = StyleSheet.create({
-    zipItem: {
-        flex: 1,
+    zipItem:{
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        backgroundColor: '#fff',
+        borderRadius: 10,
+        marginTop:20,
+        marginLeft: 200,
+        marginRight:200,
+        padding: 10
     },
-    zipPlace: {
-        flex: 1,
+    zipPlace:{
+        textAlign: 'center',
+        fontWeight: 'normal',
+        fontSize: 18,
     },
     zipCode: {
-        flex: 1,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 15,
     },
-
 })
